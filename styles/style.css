@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Spartan", sans-serif;
+
+  background: url(/img/bg-pattern-top-desktop.svg),
+    url(/img/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  min-width: 80em;
+  max-width: 100em;
+  animation: card-animation 2s ease-out 1 normal forwards;
+}
+
+.header-hero {
+  max-width: 480px;
+}
+
+article {
+  min-width: 28em;
+  margin: 20px 10px;
+}
+
+h1 {
+  line-height: 1;
+  font-size: 3.5em;
+  color: hsl(300, 43%, 22%);
+}
+
+h4 {
+  display: inline-block;
+  color: hsl(0, 0%, 100%);
+}
+
+.header-hero p {
+  margin-top: 30px;
+  color: hsl(303, 10%, 53%);
+}
+
+.raiting {
+  display: flex;
+  color: hsl(300, 43%, 22%);
+  font-weight: 700;
+
+  padding: 20px 23px;
+  margin-bottom: 1.5em;
+
+  background-color: hsl(300, 24%, 96%);
+  border-radius: 10px;
+  animation: raiting-animation 3s linear 1 normal forwards;
+}
+
+.raiting:nth-child(2) {
+    animation: raiting-animation 3.2s linear 1 normal forwards;
+}
+
+.raiting:nth-child(3) {
+    animation: raiting-animation 3.5s linear 1 normal forwards;
+}
+
+
+article p {
+  transform: translateX(30px);
+}
+
+article .raiting:nth-child(1) {
+  transform: translateX(-100px);
+}
+
+article .raiting:nth-child(2) {
+  transform: translateX(-50px);
+}
+
+main {
+  display: flex;
+}
+
+.main-info {
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px 25px;
+}
+
+.card {
+  max-width: 385px;
+  margin: 80px 20px;
+  background-color: hsl(300, 43%, 22%);
+  padding: 30px 30px;
+  border-radius: 10px;
+  animation: card-animation 1.5s linear 1 normal forwards;
+}
+
+.card:nth-child(2) {
+  transform: translateY(50px);
+  animation: card-animation 1.7s linear 1 normal forwards;
+}
+
+/* .card:nth-child(2):hover {
+    animation: jump-card 1.5s ease-out 1 normal forwards;
+} */
+
+.card:nth-child(3) {
+  transform: translateY(100px);
+  animation: card-animation 1.9s linear 1 normal forwards;
+}
+
+/* .card:nth-child(3):hover {
+    /* transform: translateY(0px);
+} */
+
+.card img {
+  border-radius: 50%;
+  width: 3em;
+}
+
+.card p {
+  margin: 5px 0;
+  font-weight: 400;
+  color: hsl(333, 80%, 67%);
+}
+
+blockquote {
+  margin: 20px 0 0;
+  line-height: 1.7em;
+  font-size: 0.9em;
+  color: hsl(300, 24%, 96%);
+}
+
+@keyframes card-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes raiting-animation {
+    0% {
+      opacity: 0;
+      transform: translateX(-2000px);
+    }
+    75% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+/* Animation card -- need to resolve */
+
+/* @keyframes jump-card {
+    0% {
+        transform: translateY(50px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+} */
+
+/* Styles for screen less than 1300px */
+
+.attribution {
+    position: absolute;
+    bottom: 10px;
+    margin-top: 70px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+@media screen and (max-width: 1300px) {
+  header {
+    min-width: 66em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: smaller;
+  }
+  article .raiting:nth-child(1) {
+    transform: translateX(0);
+  }
+
+  article .raiting:nth-child(2) {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7em;
+    text-align: center;
+  }
+  .card {
+      margin: 30px 20px;
+  }
+  .card:nth-child(2) {
+    transform: translateY(0px);
+  }
+  .card:nth-child(3) {
+    transform: translateY(0px);
+  }
+  .attribution {
+      bottom: -20px
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  main {
+      display: inline-block;
+  }
+
+  .card {
+    margin: 20px 20px;
+}
+
+    article .raiting:nth-child(1) {
+    transform: translateX(0);
+  }
+
+  article .raiting:nth-child(2) {
+    transform: translateX(0);
+  }
+  .attribution {
+    left: 0;
+    bottom: -410px
+}
+}
+
+@media screen and (max-width: 750px) {
+    main {
+        width: 100%;
+    }
+
+    .header-hero {
+        max-width: 300px;
+        line-height: 2em;
+    }
+
+    .raiting {
+        display: block;
+    }
+
+    .raiting span {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
+
+    article p {
+        transform: translateX(0);
+        padding: 5px 15px;
+      }
+
+    .card {
+        max-width: 60em;
+    }
+
+    .attribution {
+        bottom: -54em;
+    }
+
+}
