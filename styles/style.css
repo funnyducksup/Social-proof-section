@@ -12,8 +12,8 @@ body {
 
   font-family: "Spartan", sans-serif;
 
-  background: url(/img/bg-pattern-top-desktop.svg),
-    url(/img/bg-pattern-bottom-desktop.svg);
+  background: url(../img/bg-pattern-top-desktop.svg),
+    url(../img/bg-pattern-bottom-desktop.svg);
   background-repeat: no-repeat;
   background-position: top left, bottom right;
   min-height: 100vh;
